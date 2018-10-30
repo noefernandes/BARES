@@ -4,6 +4,7 @@
 #include "parser.h"
 #include "token.h"
 
+
 //=== Aliases
 using value_type = long int; //!< Type we operate on.
 //using symbol = char; //!< A symbol in this implementation is just a char.

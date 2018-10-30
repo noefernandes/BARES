@@ -136,10 +136,12 @@ value_type execute_operator( value_type v1, value_type v2, Token op )
     {
         case '^':  return pow( v1,v2 );
         case '*':  return v1*v2;
-        case '/':  if ( v2 == 0 ) std::cout << "Division by zero\n"; return 0;
-                   return v1/v2;
-        case '%':  if ( v2 == 0 ) std::cout << "Division by zero\n"; return 0;
-                   return v1%v2;
+        case '/':  if ( v2 == 0 ) std::cout << "Division by zero\n"; 
+                   else return v1/v2;
+
+        case '%':  if ( v2 == 0 ) std::cout << "Division by zero\n"; 
+                   else return v1%v2;
+                   
         case '+': return v1+v2;
         case '-': return v1-v2;
         default: throw std::runtime_error( "undefined operator" );
