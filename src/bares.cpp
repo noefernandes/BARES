@@ -136,9 +136,9 @@ value_type execute_operator( value_type v1, value_type v2, Token op )
     {
         case '^':  return pow( v1,v2 );
         case '*':  return v1*v2;
-        case '/':  if ( v2 == 0 ) throw std::runtime_error( "divisao por zero" );
+        case '/':  if ( v2 == 0 ) std::cout << "Division by zero\n"; return 0;
                    return v1/v2;
-        case '%':  if ( v2 == 0 ) throw std::runtime_error( "divisao por zero" );
+        case '%':  if ( v2 == 0 ) std::cout << "Division by zero\n"; return 0;
                    return v1%v2;
         case '+': return v1+v2;
         case '-': return v1-v2;
@@ -216,10 +216,11 @@ value_type evaluate_postfix( std::vector<Token> postfix )
         {
             value_type op2 = s.top(); s.pop();
             value_type op1 = s.top(); s.pop();
+
             auto result = execute_operator( op1, op2, c ); // ( 2, 9, '*' )
             s.push( result );
         }
-        else assert( false );
+        //else assert( false );
     }
 
     return s.top();

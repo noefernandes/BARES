@@ -13,22 +13,22 @@ void print_error_msg( const Parser::ResultType & result, std::string str )
     switch ( result.type )
     {
         case Parser::ResultType::UNEXPECTED_END_OF_EXPRESSION:
-            std::cout << "Unexpected end of input at column (" << result.at_col << ")!\n";
+            std::cout << "Unexpected end of input at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::ILL_FORMED_INTEGER:
-            std::cout << "Ill formed integer at column (" << result.at_col << ")!\n";
+            std::cout << "Ill formed integer at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::MISSING_TERM:
-            std::cout << "Missing <term> at column (" << result.at_col << ")!\n";
+            std::cout << "Missing <term> at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::EXTRANEOUS_SYMBOL:
-            std::cout << "Extraneous symbol after valid expression found at column (" << result.at_col << ")!\n";
+            std::cout << "Extraneous symbol after valid expression found at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::INTEGER_OUT_OF_RANGE:
-            std::cout << "Integer constant out of range beginning at column (" << result.at_col << ")!\n";
+            std::cout << "Integer constant out of range beginning at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::MISSING_CLOSING_SCOPE:
-            std::cout << "Missing closing scope at column (" << result.at_col << ")!\n";
+            std::cout << "Missing closing scope at column (" << result.at_col + 1 << ")!\n";
             break;
         default:
             std::cout << ">>> Unhandled error found!\n";
@@ -53,7 +53,6 @@ int main()
         // Se deu pau, imprimir a mensagem adequada.
         if ( result.type != Parser::ResultType::OK )
         {
-            std::cout << expr << std::setw(60 - expr.size()) << std::setfill(' ') << "";
             print_error_msg( result, expr );
         }
         else
@@ -70,12 +69,10 @@ int main()
             if( result < std::numeric_limits< short >::min() or
              result > std::numeric_limits< short >::max()  )
             {
-                std::cout << expr << std::setw(60 - expr.size()) << std::setfill(' ') << "";
                 std::cout << "Numeric overflow error!\n";
             }
             else
             {
-                std::cout << expr << std::setw(60 - expr.size()) << std::setfill(' ') << "";
                 std::cout << result << std::endl;
             }
         }

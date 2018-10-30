@@ -291,7 +291,6 @@ bool Parser::integer()
     // Se aceitarmos um zero, então o inteiro acabou aqui.
     if ( accept( terminal_symbol_t::TS_ZERO ) )
         return true; // OK
-    
 
     auto qtd_minus = num_minus( m_expr );
 
@@ -305,7 +304,7 @@ bool Parser::integer()
     else
     {
         int i = 0;
-        while( i < qtd_minus - 1 )
+        while( i < qtd_minus - 1)
         {
             accept( terminal_symbol_t::TS_MINUS );
             minus_it++;
@@ -314,6 +313,7 @@ bool Parser::integer()
     }
     // Vamos tentar aceitar o '-'.
     accept( terminal_symbol_t::TS_MINUS );
+
 
     /*
     int minus_sign = 0;
@@ -426,6 +426,7 @@ Parser::ResultType Parser::parse( std::string e_ )
         {
             // At this point there should not be any non-whitespace character in the input expression.
             skip_ws(); // Anyway, let us clear any remaining 'whitespaces'.
+            skip_ws_minus();
             if ( not end_input() ) // Still got a symbol?
             {
                 m_result =  ResultType( ResultType::EXTRANEOUS_SYMBOL,
@@ -446,8 +447,11 @@ Parser::ResultType Parser::parse( std::string e_ )
             }
         }
 
-        if( open_sc != closing_sc ){
-            m_result = ResultType( ResultType::MISSING_CLOSING_SCOPE, 
+        skip_ws();
+
+        if( open_sc != closing_sc )
+        {
+            m_result = ResultType ( ResultType::MISSING_CLOSING_SCOPE,
                     std::distance( m_expr.begin(), m_expr.end()));
         }
     }

@@ -8,7 +8,6 @@
 using value_type = long int; //!< Type we operate on.
 //using symbol = char; //!< A symbol in this implementation is just a char.
 
-
 //bool is_operator( symbol s );
 
 bool is_operator ( Token t);
