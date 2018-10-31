@@ -28,7 +28,7 @@ void print_error_msg( const Parser::ResultType & result, std::string str )
             std::cout << "Integer constant out of range beginning at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::MISSING_CLOSING_SCOPE:
-            std::cout << "Missing closing scope at column (" << result.at_col + 1 << ")!\n";
+            std::cout << "Missing closing \")\" at column (" << result.at_col + 1 << ")!\n";
             break;
         default:
             std::cout << ">>> Unhandled error found!\n";

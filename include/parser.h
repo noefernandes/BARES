@@ -1,3 +1,9 @@
+/*! \file parser.h
+    \author Noé Fernandes
+    \date October, 30th
+*/
+
+
 #ifndef _PARSER_H_
 #define _PARSER_H_
 
@@ -21,8 +27,8 @@
  *
  * The grammar is:
  * ```
- *   <expr>            := <term>,{ ("+"|"-"),<term> };
- *   <term>            := <integer>;
+ *   <expr>            := <term>,{ ("+"|"-"|"*"|"/"|"%"|"^"),<term> };
+ *   <term>            := "(",<expr>,")" | <integer>;
  *   <integer>         := "0" | ["-"],<natural_number>;
  *   <natural_number>  := <digit_excl_zero>,{<digit>};
  *   <digit_excl_zero> := "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";

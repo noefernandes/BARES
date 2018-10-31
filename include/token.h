@@ -1,3 +1,8 @@
+/*! \file token.h
+    \author Noé Fernandes
+    \date October, 30th
+*/
+
 #ifndef _TOKEN_H_
 #define _TOKEN_H_
 

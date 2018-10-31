@@ -25,7 +25,7 @@ apenas espaços, cujo final é encontrado na coluna n.
 expressao inteira estoura o limite de short.
 
 # Limitações
-- Alguns problemas nos operadores de divisão. Mais especificamente na divisão por zero.
+- Problemas na divisão por zero.
 - Não Reclamar final inesperado numa expressão com um único parêntese. 
 
 # How to run

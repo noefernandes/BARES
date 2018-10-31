@@ -1,3 +1,8 @@
+/*! \file bares.h
+	\author Noé Fernandes
+	\date October, 30th
+*/
+
 #ifndef BARES_H
 #define BARES_H
 
@@ -7,50 +12,66 @@
 
 //=== Aliases
 using value_type = long int; //!< Type we operate on.
-//using symbol = char; //!< A symbol in this implementation is just a char.
 
-//bool is_operator( symbol s );
-
+/*! Checks whether it is operator.
+@param t Token.
+@return True if is operator. False, otherwise. */
 bool is_operator ( Token t);
 
-//bool is_operand( symbol s );
 
+/*! Checks whether it is operand.
+@param t Token.
+@return True if is operand. False, otherwise. */
 bool is_operand( Token t );
 
-//bool is_opening_scope( symbol s );
 
+/*! Checks whether it is opening scope.
+@param t Token.
+@return True if is opening scope. False, otherwise. */
 bool is_opening_scope( Token t );
 
-//bool is_closing_scope( symbol s );
 
+/*! Checks whether it is closing scope.
+@param t Token.
+@return True if is closing scope. False, otherwise. */
 bool is_closing_scope( Token t );
 
-//bool is_right_association( symbol op );
-
+/*! Checks whether it is right association.
+@param t Token.
+@return True if is right association. False, otherwise.*/
 bool is_right_association( Token op );
 
-//std::string infix_to_postfix( std::string );
-
+/*! Transforms the vector of tokens from infix to postfix.
+@param infix Vector of tokens in infix.
+@return vector of token in postix form.*/
 std::vector<Token> infix_to_postfix( std::vector<Token> infix );
 
-//value_type char2integer( char c );
 
+/*! Transforms a string in number form to integer.
+@param t Token.
+@return value type (long integer).*/
 value_type str2integer( Token t);
 
-//value_type evaluate_postfix( std::string );
-
+/*! Returns the result of the expression.
+@param postfix Vector in postfix form.
+@return value type (long integer).*/
 value_type evaluate_postfix( std::vector<Token> postfix );
 
-//short get_precedence( symbol op );
-
+/*! Returns the precedence value of the operation.
+@param t Token
+@return short int.*/ 
 short get_precedence( Token t );
 
-//bool has_higher_or_eq_precedence( symbol op1 , symbol op2 );
-
+/*! It compares two operators and defines which one has precedence.
+@param op1 Token.
+@param op2 Token.
+@return True if op1 >= op2. False, otherwise.*/
 bool has_higher_or_eq_precedence( Token op1 , Token op2 );
 
-//value_type execute_operator( value_type v1, value_type v2, symbol op );
-
+/*! Perform an operation.
+@param op1 Token.
+@param op2 Token.
+return value type (long integer).*/
 value_type execute_operator( value_type v1, value_type v2, Token op );
 
 #endif
