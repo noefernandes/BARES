@@ -6,7 +6,7 @@
 
 O Projeto Bares é um avaliador de expressões. Ele recebe uma expressão numérica no formato de string, e devolve um resultado inteiro correto ou um erro. No processo de avaliação de erros é utilizado um parser, que tokeniza e ao mesmo tempo avalia se a expressão analisada é matematicamente correta ou não. No processo de cálculo do resultado da expressão há a trasformação da expressão do formato infixo para um tipo posfixo, que é não ambiguo. O uso de pilhas também é muito necessário para obter o resultado final.
 
-# Erro tratados
+# Erros tratados
 
 - Integer constant out of range beginning at column (n)!: valor numérico não suportado pelo short.
 - Missing <term> at column (n)!: A partir da coluna n está faltando o resto da
