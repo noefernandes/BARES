@@ -31,6 +31,6 @@ expressao inteira estoura o limite de short.
 # How to run
 
 - g++ -Wall -std=c++11 src/driver_parser.cpp src/parser.cpp src/bares.cpp -I include/ -o bares
-- ./bares < entrada.txt > saida.txt
+- ./bares < data/entrada.txt > data/saida.txt
 
 &copy; IMD/UFRN 2018-2019.

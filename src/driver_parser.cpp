@@ -13,7 +13,7 @@ void print_error_msg( const Parser::ResultType & result, std::string str )
     switch ( result.type )
     {
         case Parser::ResultType::UNEXPECTED_END_OF_EXPRESSION:
-            std::cout << "Unexpected end of input at column (" << result.at_col + 1 << ")!\n";
+            std::cout << "Unexpected end of expression at column (" << result.at_col + 1 << ")!\n";
             break;
         case Parser::ResultType::ILL_FORMED_INTEGER:
             std::cout << "Ill formed integer at column (" << result.at_col + 1 << ")!\n";
