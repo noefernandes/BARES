@@ -24,13 +24,6 @@ apenas espaços, cujo final é encontrado na coluna n.
 - Numeric overflow error!: Acontece quando uma operação dentro da expressão ou a
 expressao inteira estoura o limite de short.
 
-# Limitações
-- Problemas na divisão por zero.
-- Não Reclamar final inesperado numa expressão com um único parêntese. 
-
-# Créditos
-- Infraestrutura do código fornecida pelo Prof. SELAN RODRIGUES DOS SANTOS. 
-
 # How to run
 
 - g++ -Wall -std=c++11 src/driver_parser.cpp src/parser.cpp src/bares.cpp -I include/ -o bares
